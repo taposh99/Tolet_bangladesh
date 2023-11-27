@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BedController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +26,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard',[\App\Http\Controllers\AdminController:: class,'index'])->name('dashboard');
+    Route::get('/create/bed/space',[BedController:: class,'create'])->name('create.bed.space');
+
 });
