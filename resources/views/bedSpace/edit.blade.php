@@ -35,20 +35,21 @@
 
 
   <div class="container">
-    <form method="post" action="{{ route('bed.space.store') }}" enctype="multipart/form-data">
+    <form method="post"   action="{{ route('bed.space.update') }}" enctype="multipart/form-data">
       @csrf
+      <input type="text" name="bed_space_id" hidden value="{{ $editValue->id }}">
       <div class="row">
         <div class="col">
           <label for="id" class="form-label">location</label>
 
-          <input type="text" name="location" class="form-control" placeholder="location">
+          <input type="text" name="location" class="form-control" placeholder="location" value="{{ $editValue->location }}">
 
 
 
           <label for="rent" class="form-label"> Rent</label>
-          <input type="text" name="rent" class="form-control" placeholder="rent">
+          <input type="text" name="rent" class="form-control" placeholder="rent"  value="{{ $editValue->rent }}">
           <label for="number" class="form-label"> WhatsApp</label>
-          <input type="text" name="number" class="form-control" placeholder="number">
+          <input type="text" name="number" class="form-control" placeholder="number"  value="{{ $editValue->number }}">
 
 
 
@@ -56,16 +57,16 @@
         </div>
         <div class="col">
           <label for="status" class="form-label"> status</label>
-          <input type="text" name="status" class="form-control" placeholder="status">
+          <input type="text" name="status" class="form-control" placeholder="status"  value="{{ $editValue->status }}">
 
           <label for="tax" class="form-label">Elcetricity , Wifi</label>
-          <select name="tax" class="form-control">
+          <select name="tax" class="form-control"  value="{{ $editValue->tax }}">
             <option value="Included">Included</option>
             <option value="Not_Included">Not Included</option>
 
           </select>
-          <label for="status" class="form-label"> room_type</label>
-          <select name="room_type" class="form-control">
+          <label for="room_type" class="form-label"> room_type</label>
+          <select name="room_type" class="form-control"  value="{{ $editValue->p_room_typeid }}">
             <option value="Ac">Ac</option>
             <option value="Non_Ac">Non Ac</option>
 
