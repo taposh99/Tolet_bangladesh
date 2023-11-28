@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('tax');
             $table->integer('number');
             $table->string('room_type');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

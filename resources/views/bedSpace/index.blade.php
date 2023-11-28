@@ -66,18 +66,23 @@
                     <td>{{ $data->status }} </td>
                     <td>{{ $data->tax }} </td>
                     <td>{{ $data->room_type }} </td>
+                    <td>
+                    <img src="{{ asset('storage/images/' . $data->image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
+
+                    </td>
+
 
 
                     <td>
                         <div class="btn-group">
                             <a href="{{ route('bed.space.edit', $data->id) }}">
-                                <button class="btn btn-md btn-success me-1 p-1"><i class="fas fa-edit"></i></button>
+                                <button class="p-1 btn btn-md btn-success me-1"><i class="fas fa-edit"></i></button>
                             </a>
                             <form action="{{ route('bed.space.delete') }}" method="POST" onsubmit="return confirm('Are you sure?')">
                                 @method('DELETE')
                                 @csrf
                                 <input type="hidden" name="data_delete_id" value="{{ $data->id }}">
-                                <button class="btn btn-md btn-danger p-1"><i class="fas fa-trash-alt"></i></button>
+                                <button class="p-1 btn btn-md btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </form>
 
                         </div>

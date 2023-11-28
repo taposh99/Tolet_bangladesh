@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Bed;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Stroage;
 
 class BedController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return view("bedSpace.create");
     }
 
@@ -31,10 +33,17 @@ class BedController extends Controller
             'number' => 'required',
 
             'room_type' => 'required',
+            'image' => 'nullable',
 
         ]);
+        // Initialize $fileName
+        $fileName = null;
 
-        
+        // Check if an image is provided
+        if ($request->hasFile('image')) {
+            $fileName = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->storeAs('public/images', $fileName);
+        }
 
         Bed::create([
             'location' => $request->location,
@@ -43,6 +52,7 @@ class BedController extends Controller
             'tax' => $request->tax,
             'number' => $request->number,
             'room_type' => $request->room_type,
+            'image' => $fileName,
 
         ]);
 
@@ -56,20 +66,41 @@ class BedController extends Controller
     }
 
 
-    
+
     public function update(Request $request)
     {
+       
+
         $ValueUpdate = Bed::find($request->bed_space_id);
-
-        $ValueUpdate->update([
-            'location' => $request->location,
-            'rent' => $request->rent,
-            'status' => $request->status,
-            'tax' => $request->tax,
-            'number' => $request->number,
-            'room_type' => $request->room_type,
-        ]);
-
+    
+        if ($request->hasFile('image')) {
+            // Remove the previous image if it exists
+           
+    
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('images', $imageName, 'public');
+    
+            $ValueUpdate->update([
+                'location' => $request->location,
+                'rent' => $request->rent,
+                'status' => $request->status,
+                'tax' => $request->tax,
+                'number' => $request->number,
+                'room_type' => $request->room_type,
+                'image' => $imageName,
+            ]);
+        } else {
+            $ValueUpdate->update([
+                'location' => $request->location,
+                'rent' => $request->rent,
+                'status' => $request->status,
+                'tax' => $request->tax,
+                'number' => $request->number,
+                'room_type' => $request->room_type,
+            ]);
+        }
+    
         return back()->with('success', 'Update successfully');
     }
 
