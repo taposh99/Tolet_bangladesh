@@ -22,6 +22,11 @@
 
     </div>
 
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -68,7 +73,7 @@
                     <td>{{ $data->tax }} </td>
                     <td>{{ $data->room_type }} </td>
                     <td>
-                    <img src="{{ asset('storage/images/' . $data->space_image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
+                        <img src="{{ asset('storage/images/' . $data->space_image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
 
                     </td>
 

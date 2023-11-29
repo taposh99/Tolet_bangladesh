@@ -18,9 +18,14 @@
 
 <body>
     <div class="text-center">
-        <h1>Create room bed space</h1>
+        <h1>Bed space Add</h1>
 
     </div>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
 
 
     @if ($errors->any())
@@ -61,10 +66,10 @@
                     <label for="status" class="form-label"> status</label>
                     <input type="text" name="status" class="form-control" placeholder="status">
 
-                    <label for="tax" class="form-label">Total</label>
+                    <label for="tax" class="form-label">Total Tax</label>
                     <input type="text" name="tax" class="form-control" placeholder="tax">
 
-                    <label for="status" class="form-label"> room_type</label>
+                    <label for="status" class="form-label">Room Type</label>
                     <select name="room_type" class="form-control">
                         <option value="Ac">Ac</option>
                         <option value="Non_Ac">Non Ac</option>

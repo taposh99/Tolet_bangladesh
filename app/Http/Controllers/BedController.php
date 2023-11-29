@@ -29,10 +29,8 @@ class BedController extends Controller
             'location' => 'required',
             'rent' => 'required',
             'status' => 'required',
-
             'tax' => 'required',
             'number' => 'required',
-
             'room_type' => 'required',
             'image' => 'nullable',
 
