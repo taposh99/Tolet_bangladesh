@@ -61,12 +61,9 @@
                     <label for="status" class="form-label"> status</label>
                     <input type="text" name="status" class="form-control" placeholder="status">
 
-                    <label for="tax" class="form-label">Elcetricity , Wifi</label>
-                    <select name="tax" class="form-control">
-                        <option value="Included">Included</option>
-                        <option value="Not_Included">Not Included</option>
+                    <label for="tax" class="form-label">Total</label>
+                    <input type="text" name="tax" class="form-control" placeholder="tax">
 
-                    </select>
                     <label for="status" class="form-label"> room_type</label>
                     <select name="room_type" class="form-control">
                         <option value="Ac">Ac</option>

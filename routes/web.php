@@ -57,6 +57,4 @@ Route::middleware([
     Route::get('bed/space/edit/{id}', [FlatController::class, 'edit'])->name('bed.space.edit');
     Route::post('bed/space/update', [FlatController::class, 'update'])->name('bed.space.update');
     Route::delete('bed/space/delete', [FlatController::class, 'destroy'])->name('bed.space.delete');
-
-
 });

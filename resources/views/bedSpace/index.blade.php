@@ -46,10 +46,11 @@
                     <th scope="col">WhatsApp</th>
                     <th scope="col">status</th>
 
-                    <th scope="col">Elcetricity , Wifi</th>
+                    <th scope="col">Total Tax</th>
 
                     <th scope="col">room_type</th>
-                    <th scope="col">Ac</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Action</th>
 
 
                 </tr>
@@ -67,7 +68,7 @@
                     <td>{{ $data->tax }} </td>
                     <td>{{ $data->room_type }} </td>
                     <td>
-                    <img src="{{ asset('storage/images/' . $data->image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
+                        <img src="{{ asset('storage/images/' . $data->image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
 
                     </td>
 

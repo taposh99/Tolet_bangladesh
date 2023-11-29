@@ -16,10 +16,10 @@ class BedController extends Controller
 
     public function index()
     {
-        $valueData = Bed::latest()->get(); // Assuming 'Student' is your Eloquent model for students
+        $valueData = Bed::latest()->get(); 
 
         return view('bedSpace.index', [
-            'valueData' => $valueData, // Pass the 'students' variable to the view
+            'valueData' => $valueData, 
         ]);
     }
 
@@ -38,7 +38,7 @@ class BedController extends Controller
 
         ]);
 
-      
+
 
         // Initialize $fileName
         $fileName = null;
@@ -57,7 +57,7 @@ class BedController extends Controller
             'number' => $request->number,
             'room_type' => $request->room_type,
             'image' => $fileName,
-         
+
 
         ]);
 
@@ -74,18 +74,18 @@ class BedController extends Controller
 
     public function update(Request $request)
     {
-       
+
 
         $ValueUpdate = Bed::find($request->bed_space_id);
-    
+
         if ($request->hasFile('image')) {
             // Remove the previous image if it exists
-           
-    
+
+
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('images', $imageName, 'public');
-    
+
             $ValueUpdate->update([
                 'location' => $request->location,
                 'rent' => $request->rent,
@@ -105,7 +105,7 @@ class BedController extends Controller
                 'room_type' => $request->room_type,
             ]);
         }
-    
+
         return back()->with('success', 'Update successfully');
     }
 
