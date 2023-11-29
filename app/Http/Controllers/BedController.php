@@ -6,6 +6,7 @@ use App\Models\Bed;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Stroage;
 
+
 class BedController extends Controller
 {
     public function create()
@@ -36,6 +37,9 @@ class BedController extends Controller
             'image' => 'nullable',
 
         ]);
+
+      
+
         // Initialize $fileName
         $fileName = null;
 
@@ -53,6 +57,7 @@ class BedController extends Controller
             'number' => $request->number,
             'room_type' => $request->room_type,
             'image' => $fileName,
+         
 
         ]);
 
