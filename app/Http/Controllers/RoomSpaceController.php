@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
+use App\Models\RoomSpace;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-
-class RoomController extends Controller
+class RoomSpaceController extends Controller
 {
     public function create()
     {
-        return view("room.create");
+        return view("roomSpace.create");
     }
-
     public function index()
     {
-        $valueData = Room::latest()->get(); 
+        $valueData = RoomSpace::latest()->get();
 
-        return view('room.index', [
+        return view('roomSpace.index', [
             'valueData' => $valueData, 
         ]);
     }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -34,30 +30,30 @@ class RoomController extends Controller
             'number' => 'required',
 
             'room_type' => 'required',
-            'room_image' => 'nullable',
+            'space_image' => 'nullable',
 
         ]);
 
-      
+
 
         // Initialize $fileName
         $fileName = null;
 
         // Check if an image is provided
-        if ($request->hasFile('room_image')) {
-            $fileName = time() . '.' . $request->room_image->getClientOriginalExtension();
-            $request->room_image->storeAs('public/images', $fileName);
+        if ($request->hasFile('space_image')) {
+            $fileName = time() . '.' . $request->space_image->getClientOriginalExtension();
+            $request->space_image->storeAs('public/images', $fileName);
         }
 
-        Room::create([
+        RoomSpace::create([
             'location' => $request->location,
             'rent' => $request->rent,
             'status' => $request->status,
             'tax' => $request->tax,
             'number' => $request->number,
             'room_type' => $request->room_type,
-            'room_image' => $fileName,
-         
+            'space_image' => $fileName,
+
 
         ]);
 

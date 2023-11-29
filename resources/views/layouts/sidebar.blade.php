@@ -19,18 +19,21 @@
                         <a class="nav-link" href="{{ route('create.bed.index') }}">Bed list</a>
                     </nav>
                 </div>
+              
+
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    Room
+                    Room 
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                    <a class="nav-link" href="{{ route('create.room') }}">Add Room</a>
-                        <a class="nav-link" href="{{ route('room.index') }}">Room list</a>
+                    <a class="nav-link" href="{{ route('create.room.space') }}">Add Room</a>
+                        <a class="nav-link" href="{{ route('room.space.index') }}">Room list</a>
                         
                     </nav>
                 </div>
+
 
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages2" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>

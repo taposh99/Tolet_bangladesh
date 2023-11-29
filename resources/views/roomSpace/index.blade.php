@@ -12,13 +12,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Bed List</title>
+
 </head>
 
 
 <body>
     <div class="text-center">
-        <h1>Room List</h1>
+        <h1>Room list</h1>
 
     </div>
 
@@ -45,9 +45,10 @@
                     <th scope="col">Rent</th>
                     <th scope="col">WhatsApp</th>
                     <th scope="col">status</th>
+
                     <th scope="col">Elcetricity , Wifi</th>
+
                     <th scope="col">room_type</th>
-            
                     <th scope="col">Image</th>
                     <th scope="col">Action</th>
 
@@ -67,7 +68,7 @@
                     <td>{{ $data->tax }} </td>
                     <td>{{ $data->room_type }} </td>
                     <td>
-                    <img src="{{ asset('storage/images/' . $data->room_image) }}" alt="room Image" style="width: 90px; height: 50px;">
+                    <img src="{{ asset('storage/images/' . $data->space_image) }}" alt="Bed Image" style="width: 90px; height: 50px;">
 
                     </td>
 

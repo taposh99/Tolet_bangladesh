@@ -15,10 +15,10 @@ class FlatController extends Controller
     }
     public function index()
     {
-        $valueData = Flat::latest()->get(); // Assuming 'Student' is your Eloquent model for students
+        $valueData = Flat::latest()->get();
 
         return view('flat.index', [
-            'valueData' => $valueData, // Pass the 'students' variable to the view
+            'valueData' => $valueData, 
         ]);
     }
     public function store(Request $request)
@@ -36,7 +36,7 @@ class FlatController extends Controller
 
         ]);
 
-      
+
 
         // Initialize $fileName
         $fileName = null;
@@ -55,7 +55,7 @@ class FlatController extends Controller
             'number' => $request->number,
             'room_type' => $request->room_type,
             'flat_image' => $fileName,
-         
+
 
         ]);
 

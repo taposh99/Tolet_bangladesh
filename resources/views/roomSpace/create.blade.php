@@ -12,13 +12,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Task!</title>
+    
 </head>
 
 
 <body>
     <div class="text-center">
-        <h1>Room Add</h1>
+        <h1>Add Room</h1>
 
     </div>
 
@@ -35,22 +35,23 @@
 
 
     <div class="container">
-        <form method="post" action="{{ route('room.store') }}" nctype="multipart/form-data">
+        <form method="post" action="{{ route('room.space.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col">
                     <label for="id" class="form-label">location</label>
+
                     <input type="text" name="location" class="form-control" placeholder="location">
+
+
 
                     <label for="rent" class="form-label"> Rent</label>
                     <input type="text" name="rent" class="form-control" placeholder="rent">
-
                     <label for="number" class="form-label"> WhatsApp</label>
                     <input type="text" name="number" class="form-control" placeholder="number">
 
-
-                    <label for="room_image" class="form-label">Image</label>
-                    <input type="file" name="room_image" class="form-control">
+                    <label for="flat_image" class="form-label">Image</label>
+                    <input type="file" name="space_image" class="form-control">
 
 
 

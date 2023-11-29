@@ -3,6 +3,7 @@
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\FlatController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomSpaceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,14 +37,17 @@ Route::middleware([
     Route::post('bed/space/update', [BedController::class, 'update'])->name('bed.space.update');
     Route::delete('bed/space/delete', [BedController::class, 'destroy'])->name('bed.space.delete');
 
-    // room
-    Route::get('/create/room', [RoomController::class, 'create'])->name('create.room');
-    Route::get('/room/index', [RoomController::class, 'index'])->name('room.index');
-    Route::post('room/store', [RoomController::class, 'store'])->name('room.store');
-    
-    Route::get('bed/space/edit/{id}', [RoomController::class, 'edit'])->name('bed.space.edit');
-    Route::post('bed/space/update', [RoomController::class, 'update'])->name('bed.space.update');
-    Route::delete('bed/space/delete', [RoomController::class, 'destroy'])->name('bed.space.delete');
+
+    //room space
+
+    Route::get('/create/room/space', [RoomSpaceController::class, 'create'])->name('create.room.space');
+    Route::get('/room/space/index', [RoomSpaceController::class, 'index'])->name('room.space.index');
+    Route::post('room/space/store', [RoomSpaceController::class, 'store'])->name('room.space.store');
+
+    Route::get('bed/space/edit/{id}', [RoomSpaceController::class, 'edit'])->name('bed.space.edit');
+    Route::post('bed/space/update', [RoomSpaceController::class, 'update'])->name('bed.space.update');
+    Route::delete('bed/space/delete', [RoomSpaceController::class, 'destroy'])->name('bed.space.delete');
+
 
     //flat
     Route::get('/create/flat', [FlatController::class, 'create'])->name('create.flat');
