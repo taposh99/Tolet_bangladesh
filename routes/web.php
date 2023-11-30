@@ -56,7 +56,7 @@ Route::middleware([
     Route::get('/flat/index', [FlatController::class, 'index'])->name('flat.index');
     Route::post('flat/store', [FlatController::class, 'store'])->name('flat.store');
 
-    Route::get('bed/space/edit/{id}', [FlatController::class, 'edit'])->name('bed.space.edit');
-    Route::post('bed/space/update', [FlatController::class, 'update'])->name('bed.space.update');
-    Route::delete('bed/space/delete', [FlatController::class, 'destroy'])->name('bed.space.delete');
+    Route::get('flat/space/edit/{id}', [FlatController::class, 'edit'])->name('flat.space.edit');
+    Route::post('flat/space/update', [FlatController::class, 'update'])->name('flat.space.update');
+    Route::delete('flat/space/delete', [FlatController::class, 'destroy'])->name('flat.space.delete');
 });

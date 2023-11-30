@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Task!</title>
+    <title>Room Space!</title>
 </head>
 
 
@@ -40,9 +40,9 @@
 
 
     <div class="container">
-        <form method="post" action="{{ route('bed.space.update') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('room.space.update') }}" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="bed_space_id" hidden value="{{ $editValue->id }}">
+            <input type="text" name="room_space_id" hidden value="{{ $editValue->id }}">
             <div class="row">
                 <div class="col">
                     <label for="id" class="form-label">location</label>
@@ -56,8 +56,8 @@
                     <label for="number" class="form-label"> WhatsApp</label>
                     <input type="text" name="number" class="form-control" placeholder="number" value="{{ $editValue->number }}">
                     <label for="complete" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" placeholder="Image" value="{{ $editValue->image }}">
-                    <img width="105px" height="55px" id="showImage" src="{{asset('storage/images')}}/{{ $editValue->image }}" alt="Card image cap">
+                    <input type="file" name="space_image" class="form-control" placeholder="Image" value="{{ $editValue->space_image }}">
+                    <img width="105px" height="55px" id="showImage" src="{{asset('storage/images')}}/{{ $editValue->space_image }}" alt="space_image">
 
 
 
@@ -68,14 +68,14 @@
                     <label for="status" class="form-label"> status</label>
                     <input type="text" name="status" class="form-control" placeholder="status" value="{{ $editValue->status }}">
 
-                    <label for="tax" class="form-label">Elcetricity , Wifi</label>
+                    <label for="tax" class="form-label">Tax</label>
                     <select name="tax" class="form-control" value="{{ $editValue->tax }}">
                         <option value="Included">Included</option>
                         <option value="Not_Included">Not Included</option>
 
                     </select>
-                    <label for="room_type" class="form-label"> Room type</label>
-                    <select name="room_type" class="form-control" value="{{ $editValue->room_type }}">
+                    <label for="room_type" class="form-label"> room_type</label>
+                    <select name="room_type" class="form-control" value="{{ $editValue->p_room_typeid }}">
                         <option value="Ac">Ac</option>
                         <option value="Non_Ac">Non Ac</option>
 

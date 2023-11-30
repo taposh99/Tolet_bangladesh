@@ -18,7 +18,7 @@ class FlatController extends Controller
         $valueData = Flat::latest()->get();
 
         return view('flat.index', [
-            'valueData' => $valueData, 
+            'valueData' => $valueData,
         ]);
     }
     public function store(Request $request)
@@ -60,5 +60,57 @@ class FlatController extends Controller
         ]);
 
         return back()->with('success', 'Data created successfully');
+    }
+
+
+    public function edit($id)
+    {
+        $editValue = Flat::find($id);
+        return view('flatSpace.edit', compact('editValue'));
+    }
+
+
+    public function update(Request $request)
+    {
+
+
+        $ValueUpdate = Flat::find($request->flat_space_id);
+
+        if ($request->hasFile('flat_image')) {
+            // Remove the previous image if it exists
+
+
+            $flat_image = $request->file('flat_image');
+            $imageName = time() . '.' . $flat_image->getClientOriginalExtension();
+            $flat_image->storeAs('images', $imageName, 'public');
+
+            $ValueUpdate->update([
+                'location' => $request->location,
+                'rent' => $request->rent,
+                'status' => $request->status,
+                'tax' => $request->tax,
+                'number' => $request->number,
+                'room_type' => $request->room_type,
+                'flat_image' => $imageName,
+            ]);
+        } else {
+            $ValueUpdate->update([
+                'location' => $request->location,
+                'rent' => $request->rent,
+                'status' => $request->status,
+                'tax' => $request->tax,
+                'number' => $request->number,
+                'room_type' => $request->room_type,
+            ]);
+        }
+
+        return back()->with('success', 'Update successfully');
+    }
+
+    public function destroy(Request $request)
+    {
+        Flat::destroy($request->data_delete_id);
+
+        return back()->with('success', 'Deleted successfully');
     }
 }

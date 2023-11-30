@@ -40,9 +40,9 @@
 
 
     <div class="container">
-        <form method="post" action="{{ route('bed.space.update') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('flat.space.update') }}" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="bed_space_id" hidden value="{{ $editValue->id }}">
+            <input type="text" name="flat_space_id" hidden value="{{ $editValue->id }}">
             <div class="row">
                 <div class="col">
                     <label for="id" class="form-label">location</label>
@@ -56,8 +56,8 @@
                     <label for="number" class="form-label"> WhatsApp</label>
                     <input type="text" name="number" class="form-control" placeholder="number" value="{{ $editValue->number }}">
                     <label for="complete" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" placeholder="Image" value="{{ $editValue->image }}">
-                    <img width="105px" height="55px" id="showImage" src="{{asset('storage/images')}}/{{ $editValue->image }}" alt="Card image cap">
+                    <input type="file" name="flat_image" class="form-control" placeholder="Image" value="{{ $editValue->flat_image }}">
+                    <img width="105px" height="55px" id="showImage" src="{{asset('storage/images')}}/{{ $editValue->flat_image }}" alt="Card image cap">
 
 
 

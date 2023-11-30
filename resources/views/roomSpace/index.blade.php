@@ -81,10 +81,10 @@
 
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('bed.space.edit', $data->id) }}">
+                            <a href="{{ route('room.space.edit', $data->id) }}">
                                 <button class="p-1 btn btn-md btn-success me-1"><i class="fas fa-edit"></i></button>
                             </a>
-                            <form action="{{ route('bed.space.delete') }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                            <form action="{{ route('room.space.delete') }}" method="POST" onsubmit="return confirm('Are you sure?')">
                                 @method('DELETE')
                                 @csrf
                                 <input type="hidden" name="data_delete_id" value="{{ $data->id }}">
