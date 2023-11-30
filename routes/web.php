@@ -39,14 +39,13 @@ Route::middleware([
 
 
     //room space
-
     Route::get('/create/room/space', [RoomSpaceController::class, 'create'])->name('create.room.space');
     Route::get('/room/space/index', [RoomSpaceController::class, 'index'])->name('room.space.index');
     Route::post('room/space/store', [RoomSpaceController::class, 'store'])->name('room.space.store');
 
-    Route::get('bed/space/edit/{id}', [RoomSpaceController::class, 'edit'])->name('bed.space.edit');
-    Route::post('bed/space/update', [RoomSpaceController::class, 'update'])->name('bed.space.update');
-    Route::delete('bed/space/delete', [RoomSpaceController::class, 'destroy'])->name('bed.space.delete');
+    Route::get('room/space/edit/{id}', [RoomSpaceController::class, 'edit'])->name('room.space.edit');
+    Route::post('room/space/update', [RoomSpaceController::class, 'update'])->name('room.space.update');
+    Route::delete('room/space/delete', [RoomSpaceController::class, 'destroy'])->name('room.space.delete');
 
 
     //flat
