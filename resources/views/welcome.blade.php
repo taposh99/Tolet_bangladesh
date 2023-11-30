@@ -81,19 +81,20 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link">Services</a>
-                                <a href="room.html" class="nav-item nav-link">Rooms</a>
+                                <a href="#" class="nav-item nav-link active">Home</a>
+                                <a href="#" class="nav-item nav-link">About</a>
+                                <a href="#" class="nav-item nav-link">Services</a>
+                                <a href="#" class="nav-item nav-link">Rooms</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                        <a href="#" class="dropdown-item">Booking</a>
+                                        <a href="#" class="dropdown-item">Our Team</a>
+                                        <a href="#" class="dropdown-item">Testimonial</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="#" class="nav-item nav-link">Contact</a>
+                                <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                             </div>
                             <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
@@ -285,7 +286,7 @@
 
                                 <div class="d-flex justify-content-between">
                                     <a><b>WhatsApp:</b> {{ $data->number }}</a>
-                                    <a><b>Room Type:</b> {{ $data->room_type }}</a>
+                                    <a><b>Room:</b> {{ $data->room_type }}</a>
                                 </div>
                                 <br>
                                 <div class="d-flex justify-content-between">
@@ -341,7 +342,7 @@
 
                                 <div class="d-flex justify-content-between">
                                     <a><b>WhatsApp:</b> {{ $data->number }}</a>
-                                    <a><b>Room type:</b> {{ $data->room_type }}</a>
+                                    <a><b>Room:</b> {{ $data->room_type }}</a>
                                 </div>
                                 <br>
                                 <div class="d-flex justify-content-between">
@@ -398,7 +399,7 @@
 
                                 <div class="d-flex justify-content-between">
                                     <a><b>WhatsApp:</b> {{ $data->number }}</a>
-                                    <a><b>Room type:</b> {{ $data->room_type }}</a>
+                                    <a><b>Room:</b> {{ $data->room_type }}</a>
                                 </div>
                                 <br>
                                 <div class="d-flex justify-content-between">
