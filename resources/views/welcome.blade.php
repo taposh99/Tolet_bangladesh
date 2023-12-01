@@ -209,7 +209,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->image) }}" alt="">
+                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->image) }}" alt="" style="height: 240px;width:355px">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{ $data->rent }} TK</small>
                             </div>
                             <div class="p-4 mt-2">
@@ -264,8 +264,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <!-- <img class="img-fluid" src="{{asset('forntEndAsset')}}/img/room-1.jpg" alt=""> -->
-                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->space_image) }}" alt="">
+                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->space_image) }}" alt="" style="height: 240px;width:355px">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{ $data->rent }} TK</small>
                             </div>
                             <div class="p-4 mt-2">
@@ -321,8 +320,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <!-- <img class="img-fluid" src="{{asset('forntEndAsset')}}/img/room-1.jpg" alt=""> -->
-                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->flat_image) }}" alt="">
+                                <img class="img-fluid" src="{{ asset('storage/images/' . $data->flat_image) }}" alt="" style="height: 240px;width:355px">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{ $data->rent }} TK</small>
                             </div>
                             <div class="p-4 mt-2">

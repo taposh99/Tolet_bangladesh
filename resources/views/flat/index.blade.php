@@ -81,7 +81,7 @@
 
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('bed.space.edit', $data->id) }}">
+                            <a href="{{ route('flat.space.edit', $data->id) }}">
                                 <button class="p-1 btn btn-md btn-success me-1"><i class="fas fa-edit"></i></button>
                             </a>
                             <form action="{{ route('flat.space.delete') }}" method="POST" onsubmit="return confirm('Are you sure?')">

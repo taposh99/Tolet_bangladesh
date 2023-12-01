@@ -72,7 +72,7 @@
 
                     </select>
 
-                    <label for="tax" class="form-label">Tax</label>
+                    <label for="tax" class="form-label">Elcetricity , Wifi</label>
                     <select name="tax" class="form-control" value="{{ $editValue->tax }}">
                         <option value="Included">Included</option>
                         <option value="Not_Included">Not Included</option>
