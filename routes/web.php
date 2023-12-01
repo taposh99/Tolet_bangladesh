@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FlatController;
@@ -20,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 Route::get('/', [DashboardController::class, 'index']);
 
@@ -31,7 +31,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
     Route::get('/create/bed/space', [BedController::class, 'create'])->name('create.bed.space');
     Route::get('/create/bed/index', [BedController::class, 'index'])->name('create.bed.index');
     Route::post('bed/space/store', [BedController::class, 'store'])->name('bed.space.store');

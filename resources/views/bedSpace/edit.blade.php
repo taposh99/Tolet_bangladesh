@@ -66,14 +66,15 @@
                 </div>
                 <div class="col">
                     <label for="status" class="form-label"> status</label>
-                    <input type="text" name="status" class="form-control" placeholder="status" value="{{ $editValue->status }}">
-
-                    <label for="tax" class="form-label">Elcetricity , Wifi</label>
-                    <select name="tax" class="form-control" value="{{ $editValue->tax }}">
-                        <option value="Included">Included</option>
-                        <option value="Not_Included">Not Included</option>
+                    <select name="status" class="form-control" value="{{ $editValue->status }}">
+                        <option value="Furnished">Furnished</option>
+                        <option value="No Furnished">No Furnished</option>
 
                     </select>
+
+                    <label for="tax" class="form-label">Tax</label>
+                    <input type="number" name="tax" class="form-control" placeholder="tax" value="{{ $editValue->tax }}">
+
                     <label for="room_type" class="form-label"> Room type</label>
                     <select name="room_type" class="form-control" value="{{ $editValue->room_type }}">
                         <option value="Ac">Ac</option>

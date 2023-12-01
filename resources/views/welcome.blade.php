@@ -43,64 +43,9 @@
         <!-- Spinner End -->
 
         <!-- Header Start -->
-        <div class="container-fluid bg-dark px-0">
-            <div class="row gx-0">
-                <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Tolet BD</h1>
-                    </a>
-                </div>
-                <div class="col-lg-9">
-                    <div class="row gx-0 bg-white d-none d-lg-flex">
-                        <div class="col-lg-7 px-5 text-start">
-                            <div class="h-100 d-inline-flex align-items-center py-2 me-4">
-                                <i class="fa fa-envelope text-primary me-2"></i>
-                                <p class="mb-0">sani@gmail.com</p>
-                            </div>
-                            <div class="h-100 d-inline-flex align-items-center py-2">
-                                <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+880 1934 838499</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 px-5 text-end">
-                            <div class="d-inline-flex align-items-center py-2">
-                                <a class="me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="me-3" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="" href=""><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <a href="index.html" class="navbar-brand d-block d-lg-none">
-                            <h1 class="m-0 text-primary text-uppercase">Tolet BD</h1>
-                        </a>
-                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto py-0">
-                                <a href="#" class="nav-item nav-link active">Home</a>
-                                <a href="#" class="nav-item nav-link">About</a>
-                                <a href="#" class="nav-item nav-link">Services</a>
-                                <a href="#" class="nav-item nav-link">Rooms</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="#" class="dropdown-item">Booking</a>
-                                        <a href="#" class="dropdown-item">Our Team</a>
-                                        <a href="#" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
-                                <a href="#" class="nav-item nav-link">Contact</a>
-                                <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+
+        @include('forntEnd_Layouts.navbar')
+       
         <!-- Header End -->
 
 
@@ -191,7 +136,7 @@
 
         <!-- About Start -->
         <div class="container-xxl py-5">
-            <div class="container">
+            <div class="container" id="about">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
@@ -252,7 +197,7 @@
 
         <!-- BED SPACE Start -->
         <div class="container-xxl py-5">
-            <div class="container">
+            <div class="container" id="bed">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Our BED SPACE</h6>
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">BED SPACE</span></h1>
@@ -264,7 +209,6 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="room-item shadow rounded overflow-hidden">
                             <div class="position-relative">
-                                <!-- <img class="img-fluid" src="{{asset('forntEndAsset')}}/img/room-1.jpg" alt=""> -->
                                 <img class="img-fluid" src="{{ asset('storage/images/' . $data->image) }}" alt="">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">{{ $data->rent }} TK</small>
                             </div>
@@ -308,7 +252,7 @@
 
          <!-- Room Start -->
          <div class="container-xxl py-5">
-            <div class="container">
+            <div class="container" id="room">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Our Room SPACE</h6>
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Room SPACE</span></h1>
@@ -365,7 +309,7 @@
 
              <!-- flat Start -->
              <div class="container-xxl py-5">
-            <div class="container">
+            <div class="container" id="flat">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Our Flat SPACE</h6>
                     <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Flat SPACE</span></h1>
@@ -664,7 +608,7 @@
 
         <!-- Newsletter Start -->
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="contact">
                 <div class="col-lg-10 border rounded p-1">
                     <div class="border rounded text-center p-1">
                         <div class="bg-white rounded text-center p-5">
